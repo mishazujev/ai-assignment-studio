@@ -1,0 +1,7 @@
+project_id = "common-ground"
+
+[functions.student-chat]
+verify_jwt = true
+
+[functions.review-submission]
+verify_jwt = true
