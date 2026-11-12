@@ -1,23 +1,27 @@
-# Common Ground
+# AI Assignment Studio
 
-An early interface prototype for group assignments with private, individual AI conversations and one shared group response.
+A static assignment companion for a live group app-building workshop with Lovable. It includes a student brief, prompt scaffold, group roles, build checklist, hand-in template, teacher run sheet, 80-minute facilitation plan, rubric, and fallback activities.
 
-## Live prototype
+## Live assignment
 
-<https://mishazujev.github.io/ai-assignment-studio/>
+Open the published assignment page or open `index.html` directly in a browser. The student and teacher views work without a server, build step, or API key. Students use Lovable for the shared app project; this page stores only the local brief, checkboxes, and project link in that browser's `localStorage`.
 
-The public page is still a browser-only demonstration. Sign-in, chat, drafts, group collaboration, and submissions are not connected to real accounts yet. Do not use it with real student information.
+The project link and checklists do not sync between group members or devices. Collect the final project link and reflection in your normal classroom/LMS submission channel. The page is a workshop guide, not a student account or gradebook system.
 
-## Backend foundation
+## Before using it with a class
 
-The Supabase migration and Edge Functions now outline authenticated classroom records, private student conversations, group drafts and submissions, and a teacher-only AI review. They are not deployed or called by the public site yet. Follow [Real accounts setup](docs/REAL_ACCOUNTS_SETUP.md) to prepare Supabase and OpenAI.
+1. Review Lovable's current plan, collaboration, publishing, age, and account terms for your students and school.
+2. Confirm Lovable sign-in and project editing work on school devices and networks.
+3. Decide how groups will submit project links and reflections.
+4. Tell students to use fictional/sample data and never enter personal information, credentials, or secret API keys.
+5. Try the activity once and adjust the timing to the class.
 
-The OpenAI API key is designed to stay in Supabase Edge Function secrets. Student chats are separate per student and assignment; the teacher review endpoint reads a submitted group response and saves a separate suggested review/revision.
+See [the live assignment guide](docs/LIVE_ASSIGNMENT_GUIDE.md) for facilitator instructions and [the backend note](docs/REAL_ACCOUNTS_SETUP.md) for the unconnected Supabase scaffold.
 
-## Run the current prototype
+## Deploy
 
-Open `index.html` in a browser. It has no build step or dependencies. The code in `supabase/` is backend scaffolding and requires a Supabase project before deployment.
+Pushing to `main` runs the GitHub Pages workflow in `.github/workflows/pages.yml`. There is no application build step.
 
-## Deployment
+## Backend status
 
-Pushing to `main` runs the GitHub Pages workflow in `.github/workflows/pages.yml`.
+The `supabase/` directory contains an earlier classroom-data and AI-coaching scaffold. The current static assignment page does not connect to it, and the session does not need it. Do not use the scaffold with real student accounts or information until its schema, authorization policies, deployment, and browser integration have been reviewed and completed.
