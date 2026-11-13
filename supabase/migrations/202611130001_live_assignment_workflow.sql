@@ -2,6 +2,10 @@
 alter table public.assignments
   add column if not exists is_published boolean not null default true;
 
+alter table public.group_drafts
+  add column if not exists project_url text
+  check (project_url is null or (length(project_url) <= 2048 and project_url like 'https://%'));
+
 create or replace function public.create_profile_for_new_user()
 returns trigger language plpgsql security definer set search_path = '' as $$
 begin
