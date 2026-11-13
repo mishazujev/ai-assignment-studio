@@ -8,7 +8,7 @@ A small classroom app for teachers to publish assignments, students to sign in w
 - Teacher assignment creation and publishing.
 - Student group creation and invite-code joining.
 - A private, per-student AI coaching conversation for each assignment.
-- A shared group draft that saves to Supabase and refreshes for teammates.
+- A shared group draft and Lovable project link that save to Supabase and refresh for teammates.
 - Group submission, teacher review, numeric grades, and written feedback.
 
 ## Setup required before the page works
