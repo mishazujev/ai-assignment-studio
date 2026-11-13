@@ -20,7 +20,7 @@
   <div class="shell">
     <header class="topbar"><div class="brand"><span class="brandmark">✳</span> AI assignment studio</div><div class="userbar"><span id="userLabel"></span><button class="btn hidden" id="signOut">Sign out</button></div></header>
     <main>
-      <section class="auth-wrap" id="authView"><div class="card auth-card"><div class="overline">Group learning workspace</div><h1>Sign in to your class</h1><p>Students and teachers use Google to access assignments, private AI coaching, shared group work, and teacher feedback.</p><button class="btn primary" id="googleSignIn">Continue with Google</button><div class="notice" id="configHint">This classroom workspace needs its Supabase project to be configured by the teacher before sign-in can work.</div><div class="error" id="authError"></div></div></section>
+      <section class="auth-wrap" id="authView"><div class="card auth-card"><div class="overline">Group learning workspace</div><h1>Sign in to your class</h1><p>Students and teachers use Google to access assignments, private AI coaching, shared group work, and teacher feedback.</p><button class="btn primary" id="googleSignIn">Continue with Google</button><div class="notice hidden" id="configHint">This classroom workspace needs its Supabase project to be configured by the teacher before sign-in can work.</div><div class="error" id="authError"></div></div></section>
       <section class="content view" id="studentView">
         <div class="header-row"><div><div class="overline">Student workspace</div><h1 id="studentTitle">Your assignments</h1><p class="subhead">Choose an assignment, work through your ideas with private AI coaching, then share a group draft.</p></div><span class="tag">Private coaching · shared group draft</span></div>
         <div class="layout">
@@ -56,7 +56,7 @@
     function showError(selector,message){const el=$(selector);el.textContent=message;el.classList.add('show')}
     function clearError(selector){const el=$(selector);el.textContent='';el.classList.remove('show')}
     function escapeHTML(text){return String(text??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-    function showView(view){$$('.view').forEach(v=>v.classList.remove('active'));$('#'+view+'View').classList.add('active')}
+    function showView(view){if(view==='auth'){ $$('.view').forEach(v=>v.classList.remove('active')); $('#authView').classList.remove('hidden'); return } $('#authView').classList.add('hidden'); $$('.view').forEach(v=>v.classList.remove('active')); $('#'+view+'View').classList.add('active')}
     async function signIn(){if(!supabase){showError('#authError','Teacher setup is incomplete. Configure Supabase and Google sign-in first.');return}const {error}=await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href.split('#')[0]}});if(error)showError('#authError',error.message)}
     $('#googleSignIn').onclick=signIn;
     $('#signOut').onclick=async()=>{await supabase.auth.signOut();location.reload()};
