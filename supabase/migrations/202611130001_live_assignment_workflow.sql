@@ -2,6 +2,24 @@
 alter table public.assignments
   add column if not exists is_published boolean not null default true;
 
+create or replace function public.create_profile_for_new_user()
+returns trigger language plpgsql security definer set search_path = '' as $$
+begin
+  insert into public.profiles (id, display_name, role)
+  values (
+    new.id,
+    coalesce(
+      nullif(trim(new.raw_user_meta_data ->> 'display_name'), ''),
+      nullif(trim(new.raw_user_meta_data ->> 'full_name'), ''),
+      nullif(trim(new.raw_user_meta_data ->> 'name'), ''),
+      'Student'
+    ),
+    'student'
+  );
+  return new;
+end;
+$$;
+
 create policy "students read published assignments" on public.assignments
 for select to authenticated
 using (is_published = true);
