@@ -1,27 +1,26 @@
 # AI Assignment Studio
 
-A static assignment companion for a live group app-building workshop with Lovable. It includes a student brief, prompt scaffold, group roles, build checklist, hand-in template, teacher run sheet, 80-minute facilitation plan, rubric, and fallback activities.
+A small classroom app for teachers to publish assignments, students to sign in with Google, groups to share a working draft, and teachers to review and grade submissions.
 
-## Live assignment
+## What the app does
 
-Open the published assignment page or open `index.html` directly in a browser. The student and teacher views work without a server, build step, or API key. Students use Lovable for the shared app project; this page stores only the local brief, checkboxes, and project link in that browser's `localStorage`.
+- Google sign-in through Supabase Auth.
+- Teacher assignment creation and publishing.
+- Student group creation and invite-code joining.
+- A private, per-student AI coaching conversation for each assignment.
+- A shared group draft and Lovable project link that save to Supabase and refresh for teammates.
+- Group submission, teacher review, numeric grades, and written feedback.
 
-The project link and checklists do not sync between group members or devices. Collect the final project link and reflection in your normal classroom/LMS submission channel. The page is a workshop guide, not a student account or gradebook system.
+## Setup required before the page works
 
-## Before using it with a class
+This is a static GitHub Pages site backed by Supabase. See [the real accounts setup guide](docs/REAL_ACCOUNTS_SETUP.md) for Google OAuth, Supabase configuration, database migrations, function deployment, teacher promotion, and the browser publishable key. The page will not sign in while `supabase/public-config.js` still contains its placeholder values.
 
-1. Review Lovable's current plan, collaboration, publishing, age, and account terms for your students and school.
-2. Confirm Lovable sign-in and project editing work on school devices and networks.
-3. Decide how groups will submit project links and reflections.
-4. Tell students to use fictional/sample data and never enter personal information, credentials, or secret API keys.
-5. Try the activity once and adjust the timing to the class.
+Use sample classroom content and review school policy before enabling student accounts. The OpenAI key and Supabase service-role key must remain server-side; only the Supabase publishable/anon key belongs in the browser config.
 
-See [the live assignment guide](docs/LIVE_ASSIGNMENT_GUIDE.md) for facilitator instructions and [the backend note](docs/REAL_ACCOUNTS_SETUP.md) for the unconnected Supabase scaffold.
+## Run locally
+
+Open the GitHub Pages URL after configuring Supabase, or serve the repository over localhost (for example, `python -m http.server 8000`) and add that exact local URL to the Supabase Auth redirect allowlist. The page has no local build step.
 
 ## Deploy
 
-Pushing to `main` runs the GitHub Pages workflow in `.github/workflows/pages.yml`. There is no application build step.
-
-## Backend status
-
-The `supabase/` directory contains an earlier classroom-data and AI-coaching scaffold. The current static assignment page does not connect to it, and the session does not need it. Do not use the scaffold with real student accounts or information until its schema, authorization policies, deployment, and browser integration have been reviewed and completed.
+Pushing to `main` runs the GitHub Pages workflow in `.github/workflows/pages.yml`.

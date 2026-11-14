@@ -1,49 +1,23 @@
-# Live assignment guide: build a useful app
+# Live assignment guide
 
-## Assignment outcome
+## Before class
 
-In groups, students choose a small school or community problem, identify one user, build a simple front-end prototype in Lovable, test a task with another person, make one improvement, and demonstrate the result.
+- Complete [real account setup](REAL_ACCOUNTS_SETUP.md), including Google OAuth, Supabase, AI secrets, and teacher-role promotion.
+- Test with separate teacher and student Google accounts on school devices and network.
+- Choose a manageable assignment prompt, due date, and grading scale. The current teacher grade input accepts 0–100.
+- Tell students which group shares invite codes and where the group will present its work.
+- Review school rules for student accounts, external AI services, and data retention. Ask students to use fictional/sample content and avoid personal information.
 
-The expected output is a project link, a short demonstration, and a brief reflection. A published production app, database, login system, or external API is not required.
+## Student flow
 
-## Before the session
+1. Open the class page and choose **Continue with Google**. First sign-in creates the student account.
+2. Click the assignment title. One group member creates a group and shares the displayed invite code; teammates select the same assignment and join with that code.
+3. Write ideas in **Think with AI** to get private coaching. Use **Add my text to group draft** to share your writing after AI feedback. Paste the Lovable project URL in the shared app-link field.
+4. Group members edit the shared draft. It autosaves and refreshes for teammates.
+5. When ready, click **Send to teacher**, then present the app and explain the group's choices.
 
-- Review Lovable's current [pricing](https://lovable.dev/pricing), [collaboration documentation](https://docs.lovable.dev/features/collaboration), and applicable terms for student accounts and AI tools.
-- Test access on the classroom devices and network. Confirm students can sign up or sign in under school policy.
-- Choose the submission channel (for example, your LMS assignment or class form) and tell students exactly where to send the editor/preview link and reflection.
-- Decide whether students use individual accounts or a school-approved arrangement. Do not share passwords.
-- Prepare a fallback: one student drives the computer while teammates sketch, test, and report if sign-in or collaboration is blocked.
-- Ask students to use fictional data. Do not enter real names, contact information, passwords, or private classroom information in Lovable.
+## Teacher flow
 
-## Suggested 80-minute plan
+Sign in with Google after the teacher profile has been promoted to the teacher role. Create and publish an assignment, then select it in **Your assignments** to see each group's shared draft or submission. Enter a grade from 0 to 100 and written feedback, then save. Students' private AI conversations are not visible to the teacher.
 
-| Time | Activity | Teacher cue |
-| --- | --- | --- |
-| 0–8 min | Launch the brief | A successful result is one working user flow, one test, and one improvement. |
-| 8–18 min | Choose a user and sketch | Keep the idea to one user, one main task, and three useful details. |
-| 18–48 min | Build in Lovable | Have one driver prompt while teammates review each change. Prioritize function over polish. |
-| 48–60 min | Test with another group | Give the tester a task and observe without coaching. |
-| 60–70 min | Improve and prepare | Make one visible change from feedback and prepare the demo. |
-| 70–80 min | Share and submit | Collect the project link and one-sentence reflection through the chosen class channel. |
-
-## Lovable free-plan considerations
-
-Plan details can change; recheck on the day. The pricing page currently describes a daily grant of five build credits, with a monthly cap of 30 for Free, and unlimited collaborators. Lovable's collaboration documentation says collaborators need accounts to work on a project. Free publishing can be set to invite-only with up to 10 invited viewers per project. For a classroom demonstration, sharing the editor or preview link through your usual class channel can avoid depending on public publication. Test the exact access flow before class.
-
-Keep the activity front-end-only. Use sample content and skip authentication, payments, external API keys, and production data. Free Cloud/AI allowances are limited; the assignment does not depend on them. If a group runs out of build credits, assess its stable prototype, test evidence, and next-step plan.
-
-## Assessment (10 points)
-
-- **User and problem (0–3):** Is the intended user and need specific? Do they guide the design?
-- **Working prototype (0–3):** Can the group demonstrate a clear main flow with useful details?
-- **Testing and iteration (0–2):** Did a test produce feedback and a visible improvement?
-- **Team explanation (0–2):** Can students explain decisions and name a sensible next step?
-
-Assess reasoning and iteration rather than production readiness or credit consumption.
-
-## Contingencies
-
-- **Sign-in/network issue:** one student drives while teammates sketch, test, and report.
-- **Credits exhausted:** stop prompting, demonstrate the last stable version, and annotate what would come next.
-- **Incomplete app:** accept a clear clickable flow or documented prototype, test observation, and next step.
-- **No published link:** demonstrate in the editor or preview; do not require public deployment.
+The page does not host students’ Lovable projects. Teachers may need to be invited to the project or given permission to open its preview link; have groups verify access before presenting.
