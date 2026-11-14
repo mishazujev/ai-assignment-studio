@@ -1,6 +1,5 @@
-// This is the Supabase browser publishable/anon key, not a service-role secret.
-// Fill in the project's URL and publishable key before deploying GitHub Pages.
+// Public browser key. Database row-level security protects access.
 window.SUPABASE_CONFIG = {
-  url: "https://YOUR_PROJECT_REF.supabase.co",
-  anonKey: "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY"
+  url: "https://fkiqdxfdmxjqcmrbmqbz.supabase.co",
+  anonKey: "sb_publishable__HE8V5_8gYZUQ19WMUCoWg_eVkWCbk6"
 };
